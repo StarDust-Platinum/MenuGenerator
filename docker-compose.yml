@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web-app:
+    build: .
+    container_name: ingredient-manager
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: always
